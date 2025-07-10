@@ -17,7 +17,7 @@ pub const PAGE_MASK: u64 = (PAGE_SIZE - 1) as u64;
 /// memory leaks during development (we may want to make this configurable in the future)
 ///
 /// Currently this limit is set so that the maximum corresponds to ~400 MB of host memory.
-pub const MAX_PAGES: usize = 50_000;
+pub const MAX_PAGES: usize = 250_000;
 
 /// Represents an opaque index into physical memory.
 #[derive(Clone, Copy, PartialEq, Eq)]
