@@ -256,6 +256,7 @@ pub mod x86 {
     use super::*;
 
     pub const HELPERS: &[(&str, PcodeOpHelper)] = &[
+        ("ffree", noop),
         ("rdtsc", rdtsc),
         ("cpuid_basic_info", cpuid_basic_info),
         ("cpuid_Version_info", cpuid_version_info),
@@ -278,6 +279,11 @@ pub mod x86 {
         ("f2xm1", f2xm1),
         ("fscale", fscale),
     ];
+
+    fn noop(cpu: &mut Cpu, _dst: VarNode, args: [Value; 2]) {
+        
+    }
+
 
     fn rdtsc(cpu: &mut Cpu, dst: VarNode, _: [Value; 2]) {
         cpu.write_var(dst, 0_u64);
